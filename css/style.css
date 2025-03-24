@@ -1,7 +1,7 @@
 /* ini css */
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: fantasy;
     background-color: #f4f4f9;
     box-sizing: border-box;
     margin: 0;
@@ -25,5 +25,69 @@ body{
 .main-content{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
+    background-color: cornsilk;
+}
+
+.nav-fitur{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-fitur>a{
+    color: white;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 50%;
+    align-self: center;
+}
+
+.nav-fitur-active{
+    background-color: cornflowerblue;
+}
+
+.nav-fitur-non-active{
+    background-color: darkcyan;
+}
+
+.section-header{
+    background-color: aquamarine;
+    padding: 16px;
+}
+
+.section-image{
+    background-image: url(../assets/Persegi.jpg);
+    width:200px ;
+    height: 100px;
+    justify-self: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.calculate-content{
+    border: 1px solid;
+    height: 300px;
+}
+
+.section-image-panjang{
+    background-image: url(../assets/Panjang.jpg);
+    width:200px ;
+    height: 100px;
+    justify-self: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.calculate-content-panjang{
+    border: 1px solid;
+    height: 300px;
+}
+
+section{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+footer{
+    text-align: center;
 }
