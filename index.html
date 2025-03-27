@@ -1,110 +1,106 @@
-<!DOCTYPE html> <!--Jenis HTML 5-->
-<html lang="en"> <!--Bahasa yang diproses HTML-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> <!--Meta Data-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Skala Tampilan Agar Responsif di mobile dan pc-->
-    <title>Katik - Patkor</title> <!--Judul Web-->
-
-    <!-- CSS External -->
-     <link rel="stylesheet" href="css\style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katik - Patkor</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Berisi navbar -->
+    <!-- Navbar -->
     <header class="top">
         <h1><span>Katik</span> Kalkulator Matematik</h1>
-
     </header>
 
-    <!-- Isi Konten Utama -->
-    <main class="main-content">
-        <header>
-            <h1>Welcome to Katik</h1>
-        </header>
-        
-        <!-- Welcome Speech -->
-        <p>Hai Selamat Datang Di Katik</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eveniet porro doloremque!</p>
-        
+    <!-- Navigasi Fitur -->
+    <div class="nav-fitur">
+        <a href="#" class="nav-fitur-active" onclick="showSection('square')">Persegi</a>
+        <a href="#" class="nav-fitur-non-active" onclick="showSection('rectangle')">Persegi Panjang</a>
+    </div>
 
-        <!-- Navigasi Fitur -->
-        <div class="nav-fitur">
-            <a href="#persegi" class="nav-fitur-active">Persegi</a>
-            <a href="#persegi-panjang" class="nav-fitur-non-active">Persegi Panjang</a>
+    <!-- Section Persegi -->
+    <section id="square" class="content-section">
+        <h2>Persegi</h2>
+        
+        <!-- Gambar Persegi -->
+        <div class="gambar-container">
+            <img src="assets\Persegi.jpg" alt="Gambar Persegi">
         </div>
 
-        <!-- Section Persegi -->
-        <section id="persegi"">
-            <!-- Section Luas -->
-        <section>
-            <header class="section-header">
-                <h1>Luas Persegi</h1>
-            </header>
+        <div class="sub-nav">
+            <button onclick="showCalculation('luasPersegi')">Luas</button>
+            <button onclick="showCalculation('kelilingPersegi')">Keliling</button>
+        </div>
 
-            <!-- Gambar Luas Persegi -->
-            <div class="section-image"></div>
-
-            <!-- Konten Perhitungan -->
-            <div class="calculate-content"></div>
-
-
+        <!-- Luas Persegi -->
+        <section id="luasPersegi" class="calculation">
+            <h3>Luas Persegi</h3>
+            <p>Formula: Luas = Sisi × Sisi</p>
+            <label>Sisi:</label>
+            <input type="number" id="sisiLuas" placeholder="Masukkan nilai">
+            <button class="hitung-btn" onclick="hitungLuasPersegi()">Hitung</button>
+            <button class="reset-btn" onclick="resetLuasPersegi()">Reset</button>
+            <p id="hasilLuasPersegi"></p>
         </section>
 
-        <!-- Section Keliling -->
-         <section>
-            <header class="section-header">
-                <h1>Keliling Persegi</h1>
-            </header>
-
-            <!-- Gambar Keliling -->
-             <div class="section-image"></div>
-
-             <!-- Konten Perhitungan -->
-             <div class="calculate-content"></div>
-
-         </section>
+        <!-- Keliling Persegi -->
+        <section id="kelilingPersegi" class="calculation">
+            <h3>Keliling Persegi</h3>
+            <p>Formula: Keliling = 4 × Sisi</p>
+            <label>Sisi:</label>
+            <input type="number" id="sisiKeliling" placeholder="Masukkan nilai">
+            <button class="hitung-btn" onclick="hitungKelilingPersegi()">Hitung</button>
+            <button class="reset-btn" onclick="resetKelilingPersegi()">Reset</button>
+            <p id="hasilKelilingPersegi"></p>
         </section>
+    </section>
+
+    <!-- Section Persegi Panjang -->
+    <section id="rectangle" class="content-section">
+        <h2>Persegi Panjang</h2>
         
+        <!-- Gambar Persegi Panjang -->
+        <div class="gambar-container">
+            <img src="assets\Panjang.png" alt="Gambar Persegi Panjang">
+        </div>
 
-         <!-- Section Persegi Panjang -->
-         <section id="persegi-panjang">
-            <section>
-                <header class="section-header">
-                    <h1>Luas Persegi Panjang</h1>
-                </header>
-    
-                <!-- Gambar Luas Persegi -->
-                <div class="section-image-panjang"></div>
-    
-                <!-- Konten Perhitungan -->
-                <div class="calculate-content-panjang"></div>
-    
-    
-            </section>
-    
-            <!-- Section Keliling -->
-             <section>
-                <header class="section-header">
-                    <h1>Keliling Persegi Panjang</h1>
-                </header>
-    
-                <!-- Gambar Keliling -->
-                 <div class="section-image-panjang"></div>
-    
-                 <!-- Konten Perhitungan -->
-                 <div class="calculate-content-panjang"></div>
-    
-             </section>
-         </section>
+        <div class="sub-nav">
+            <button onclick="showCalculation('luasRectangle')">Luas</button>
+            <button onclick="showCalculation('kelilingRectangle')">Keliling</button>
+        </div>
 
-    </main>
+        <!-- Luas Persegi Panjang -->
+        <section id="luasRectangle" class="calculation">
+            <h3>Luas Persegi Panjang</h3>
+            <p>Formula: Luas = Panjang × Lebar</p>
+            <label>Panjang:</label>
+            <input type="number" id="panjangLuas" placeholder="Masukkan nilai">
+            <label>Lebar:</label>
+            <input type="number" id="lebarLuas" placeholder="Masukkan nilai">
+            <button class="hitung-btn" onclick="hitungLuasRectangle()">Hitung</button>
+            <button class="reset-btn" onclick="resetLuasRectangle()">Reset</button>
+            <p id="hasilLuasRectangle"></p>
+        </section>
 
-    <!-- Isi Footer -->
-     <footer>
+        <!-- Keliling Persegi Panjang -->
+        <section id="kelilingRectangle" class="calculation">
+            <h3>Keliling Persegi Panjang</h3>
+            <p>Formula: Keliling = 2 × (Panjang + Lebar)</p>
+            <label>Panjang:</label>
+            <input type="number" id="panjangKeliling" placeholder="Masukkan nilai">
+            <label>Lebar:</label>
+            <input type="number" id="lebarKeliling" placeholder="Masukkan nilai">
+            <button class="hitung-btn" onclick="hitungKelilingRectangle()">Hitung</button>
+            <button class="reset-btn" onclick="resetKelilingRectangle()">Reset</button>
+            <p id="hasilKelilingRectangle"></p>
+        </section>
+    </section>
+
+    <footer>
         <p>Made By &copy; Patkor</p>
-     </footer>
+    </footer>
 
-    <!-- Javascript External -->
-    <script src="js\script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
